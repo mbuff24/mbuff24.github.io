@@ -1,2 +1,1 @@
-resume
-======
+Simple resume using compass
