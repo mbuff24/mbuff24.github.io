@@ -1,0 +1,148 @@
+@import "base";
+
+body {
+	font-family: Garamond, Georgia, serif;
+}
+
+.wrapper {
+	margin: 0 auto;
+	max-width: 48em;
+}
+
+h1 {
+	@media print {
+		font-size: 1.1em;
+		font-weight: bold;
+		margin: 0;
+	}
+}
+
+h3, h4, ul {
+	margin: 0;
+	padding: 0;
+}
+
+h3, h4 {
+	font-weight: bold;
+}
+
+header, section {
+	@extend .clearfix;
+}
+
+header {
+
+	margin: 0 2em;
+	padding-bottom: 0.5em;
+	border-bottom: 1px solid black;
+
+	h1 {
+		text-align: center;
+	}
+
+	ul {
+
+		text-align: center;
+
+		li {
+			display: inline-block;
+			padding-left: 0.5em;
+			padding-right: 0.5em;
+		}
+
+	}
+
+}
+
+section {
+
+	margin-top: 1em;
+	position: relative;
+
+	@media print {
+		margin-top: 0.5em;
+	}
+
+	.sub-header {
+
+		padding-left: 1em;
+		margin-bottom: 1em;
+		width: $subheader_width;
+
+		@media all and (min-width: $tablet_breakpoint) {
+			position: absolute;
+			top: 0;
+			left: 0;
+			padding-left: 0;
+			margin-bottom: 0;
+		}
+
+		h3 {
+			font-size: 1em;
+			text-transform: uppercase;
+			//@include rotate(-90deg);
+		}
+	}
+
+	.content {
+
+		padding-left: 1em;
+
+		@media all and (min-width: $tablet_breakpoint) {
+			padding-left: $subheader_width;
+		}
+
+		h3 {
+			font-size: 1.1em;
+		}
+
+		article {
+
+			padding-bottom: 1em;
+			position: relative;
+
+			@media all and (min-width: $tablet_breakpoint) {
+				padding-right: $aside_width;
+			}
+
+			aside {
+
+				@media all and (min-width: $tablet_breakpoint) {
+					width: $aside_width;
+					position: absolute;
+					top: 0;
+					right: 0;
+				}
+
+			}
+
+			li {
+				margin-left: 1em;
+				list-style-type: square;
+			}
+
+		}
+
+		article:last-child {
+			padding-bottom: 0;
+		}
+
+		li {
+			line-height: 1.2em;
+		}
+
+	}
+
+}
+
+.title {
+	font-weight: bold;
+}
+
+.position {
+	font-weight: normal;
+}
+
+.position, .date {
+	font-style: italic;
+}
